@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+  <div class="page-food">
+    <h1 class="menu-head">МЕНЮ</h1>
+
+    {% for day in days %}
+      {% if weekday == loop.index0 %}
+        <section class="day open">
+          <section class="menu-heading">
+            <h2>{{ day }}</h2>
+
+            <div class="badge">
+              {% if lunch_type == 'льготный' %}
+                <a href="{{ url_for('dining_menu', number=weekday, type='платный') }}" class="badge-link">
+                  <span class="badge-dots">
+                    <span class="dot red"></span>
+                    <span class="dot white"></span>
+                  </span>
+                  <span class="badge-text">Бесплатно</span>
+                </a>
+              {% else %}
+                <a href="{{ url_for('dining_menu', number=weekday, type='льготный') }}" class="badge-link">
+                  <span class="badge-dots">
+                    <span class="dot red"></span>
+                    <span class="dot white"></span>
+                  </span>
+                  <span class="badge-text">Платно</span>
+                </a>
+              {% endif %}
+            </div>
+
+          </section>
+
+          <section class="mini-menu">
+            <section class="menu-col">
+              <h3>Завтрак</h3>
+              {% for item in menu.breakfast %}
+                <p>{{ item }}</p>
+              {% endfor %}
+            </section>
+
+            <section class="divider"></section>
+
+            <section class="menu-col">
+              <h3>Обед {{ lunch_type }}</h3>
+              {% for item in menu.lunch[lunch_type] %}
+                <p>{{ item }}</p>
+              {% endfor %}
+            </section>
+          </section>
+        </section>
+      {% else %}
+        <a href="{{ url_for('dining_menu', number=loop.index0, type=lunch_type) }}" class="day-link">
+          <section class="day pill close">
+            <h2>{{ day }}</h2>
+          </section>
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

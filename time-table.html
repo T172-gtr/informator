@@ -1,0 +1,191 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+{% extends "base.html" %}
+
+{% block content %}
+ <div class="container">
+    <div class="page-timetable">
+      <div class="app-viewport">
+        <main id="view-classes-list">
+          <div class="page-title">РАСПИСАНИЕ</div>
+          <section class="parallel-group">
+            <div class="parallel-title">Пятые классы</div>
+            <div class="classes-row">
+              <button class="class-btn" data-class="5-А">5-А</button>
+              <button class="class-btn" data-class="5-Б">5-Б</button>
+              <button class="class-btn" data-class="5-В">5-В</button>
+              <button class="class-btn" data-class="5-Г">5-Г</button>
+              <button class="class-btn" data-class="5-Д">5-Д</button>
+            </div>
+          </section>
+          <section class="parallel-group">
+            <div class="parallel-title">Параллель 6 классов</div>
+            <div class="classes-row">
+              <button class="class-btn" data-class="6-А">6-А</button>
+              <button class="class-btn" data-class="6-Б">6-Б</button>
+              <button class="class-btn" data-class="6-В">6-В</button>
+              <button class="class-btn" data-class="6-Г">6-Г</button>
+            </div>
+          </section>
+
+          <section class="parallel-group">
+            <div class="parallel-title">Параллель 6 классов</div>
+            <div class="classes-row">
+              <button class="class-btn" data-class="6-А">6-А</button>
+              <button class="class-btn" data-class="6-Б">6-Б</button>
+              <button class="class-btn" data-class="6-В">6-В</button>
+              <button class="class-btn" data-class="6-Г">6-Г</button>
+            </div>
+          </section>
+
+
+
+          <section class="parallel-group">
+            <div class="parallel-title">Параллель 6 классов</div>
+            <div class="classes-row">
+              <button class="class-btn" data-class="6-А">6-А</button>
+              <button class="class-btn" data-class="6-Б">6-Б</button>
+              <button class="class-btn" data-class="6-В">6-В</button>
+              <button class="class-btn" data-class="6-Г">6-Г</button>
+            </div>
+          </section>
+
+
+
+
+
+
+        </main>
+        <section id="view-carousel">
+          <div class="page-title" id="carouselClassTitle">5-А КЛАСС</div>
+          <div class="schedule-card-wrapper">
+            <div class="schedule-header">
+              <span class="current-class-label" id="cardClassLabel">Расписание</span>
+              <span class="status-badge">Сегодня</span>
+            </div>
+            <div class="swiper" id="swiperContainer">
+              <div class="swiper-wrapper">
+                <!-- ПН -->
+                <div class="swiper-slide">
+                  <div class="day-heading">&lt; ПН &gt;</div>
+                  <ul class="lessons-list">
+                    <li class="lesson-item"><span><span class="lesson-num">1.</span>Русский язык</span><span class="lesson-room">каб. 204</span></li>
+                    <li class="lesson-item"><span><span class="lesson-num">2.</span>Математика</span><span class="lesson-room">каб. 312</span></li>
+                    <li class="lesson-item"><span><span class="lesson-num">3.</span>Литература</span><span class="lesson-room">каб. 204</span></li>
+                    <li class="lesson-item"><span><span class="lesson-num">4.</span>История</span><span class="lesson-room">каб. 105</span></li>
+                    <li class="lesson-item"><span><span class="lesson-num">5.</span>Физкультура</span><span class="lesson-room">Зал 1</span></li>
+                  </ul>
+                </div>
+                <!-- ВТ -->
+                <div class="swiper-slide">
+                  <div class="day-heading">&lt; ВТ &gt;</div>
+                  <ul class="lessons-list">
+                    <li class="lesson-item"><span><span class="lesson-num">1.</span>Иностранный яз.</span><span class="lesson-room">каб. 401</span></li>
+                    <li class="lesson-item"><span><span class="lesson-num">2.</span>Математика</span><span class="lesson-room">каб. 312</span></li>
+                    <li class="lesson-item"><span><span class="lesson-num">3.</span>Биология</span><span class="lesson-room">каб. 210</span></li>
+                    <li class="lesson-item"><span><span class="lesson-num">4.</span>География</span><span class="lesson-room">каб. 215</span></li>
+                    <li class="lesson-item"><span><span class="lesson-num">5.</span>Музыка</span><span class="lesson-room">каб. 118</span></li>
+                  </ul>
+                </div>
+                <!-- СР -->
+                <div class="swiper-slide">
+                  <div class="day-heading">&lt; СР &gt;</div>
+                  <ul class="lessons-list">
+                    <li class="lesson-item"><span><span class="lesson-num">1.</span>Математика</span><span class="lesson-room">каб. 312</span></li>
+                    <li class="lesson-item"><span><span class="lesson-num">2.</span>Русский язык</span><span class="lesson-room">каб. 204</span></li>
+                    <li class="lesson-item"><span><span class="lesson-num">3.</span>Информатика</span><span class="lesson-room">каб. 102</span></li>
+                    <li class="lesson-item"><span><span class="lesson-num">4.</span>Технология</span><span class="lesson-room">Мастерские</span></li>
+                  </ul>
+                </div>
+                <!-- ЧТ -->
+                <div class="swiper-slide">
+                  <div class="day-heading">&lt; ЧТ &gt;</div>
+                  <ul class="lessons-list">
+                    <li class="lesson-item"><span><span class="lesson-num">1.</span>История</span><span class="lesson-room">каб. 105</span></li>
+                    <li class="lesson-item"><span><span class="lesson-num">2.</span>Русский язык</span><span class="lesson-room">каб. 204</span></li>
+                    <li class="lesson-item"><span><span class="lesson-num">3.</span>Иностранный яз.</span><span class="lesson-room">каб. 401</span></li>
+                    <li class="lesson-item"><span><span class="lesson-num">4.</span>Физкультура</span><span class="lesson-room">Зал 1</span></li>
+                  </ul>
+                </div>
+                <!-- ПТ -->
+                <div class="swiper-slide">
+                  <div class="day-heading">&lt; ПТ &gt;</div>
+                  <ul class="lessons-list">
+                    <li class="lesson-item"><span><span class="lesson-num">1.</span>Математика</span><span class="lesson-room">каб. 312</span></li>
+                    <li class="lesson-item"><span><span class="lesson-num">2.</span>Литература</span><span class="lesson-room">каб. 204</span></li>
+                    <li class="lesson-item"><span><span class="lesson-num">3.</span>ИЗО</span><span class="lesson-room">каб. 308</span></li>
+                    <li class="lesson-item"><span><span class="lesson-num">4.</span>ОБЖ</span><span class="lesson-room">каб. 201</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Кнопки листания карусели -->
+            <div class="carousel-arrows">
+              <button class="arrow-btn" id="btnPrev">&lt;</button>
+              <button class="arrow-btn" id="btnNext">&gt;</button>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+  <!-- Подключение Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const viewClassesList = document.getElementById('view-classes-list');
+    const viewCarousel = document.getElementById('view-carousel');
+    const carouselClassTitle = document.getElementById('carouselClassTitle');
+    const cardClassLabel = document.getElementById('cardClassLabel');
+
+    let swiper = null;
+
+    function getCurrentDayIndex() {
+      const day = new Date().getDay();
+      return (day >= 1 && day <= 5) ? day - 1 : 0;
+    }
+
+    function setupSwiper() {
+      if (swiper) {
+        swiper.destroy(true, true);
+      }
+      swiper = new Swiper('#swiperContainer', {
+        initialSlide: getCurrentDayIndex(),
+        centeredSlides: true,
+        slidesPerView: 1.22,
+        spaceBetween: 14,
+        speed: 300,
+        navigation: {
+          prevEl: '#btnPrev',
+          nextEl: '#btnNext',
+        },
+      });
+    }
+
+    function openClassSchedule(className) {
+      carouselClassTitle.textContent = `${className} КЛАСС`;
+      cardClassLabel.textContent = `Класс ${className}`;
+
+      viewClassesList.style.display = 'none';
+      viewCarousel.style.display = 'flex';
+
+      setupSwiper();
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }
+
+    function openHome() {
+      viewCarousel.style.display = 'none';
+      viewClassesList.style.display = 'flex';
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }
+
+    document.querySelectorAll('.class-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const className = btn.dataset.class;
+        openClassSchedule(className);
+      });
+    });
+  </script>
+
+{% endblock %}

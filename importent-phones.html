@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="page-phones">
+        <h1 class="phones-main-title">ВАЖНЫЕ ТЕЛЕФОНЫ</h1>
+
+        <main class="phones-feed">
+            <article class="phone-card">
+                <div class="phone-info">
+                    <h2 class="phone-title">Приемная директора</h2>
+                    <p class="phone-subtitle">По общим вопросам и записи на прием</p>
+                </div>
+                <a href="tel:+74950000001" class="phone-btn">+7 (495) 000-00-01</a>
+            </article>
+
+            <article class="phone-card">
+                <div class="phone-info">
+                    <h2 class="phone-title">Учительская / Вахта</h2>
+                    <p class="phone-subtitle">Связь с дежурным администратором</p>
+                </div>
+                <a href="tel:+74950000002" class="phone-btn">+7 (495) 000-00-02</a>
+            </article>
+
+            <article class="phone-card">
+                <div class="phone-info">
+                    <h2 class="phone-title">Медицинский кабинет</h2>
+                    <p class="phone-subtitle">Время работы: Пн-Пт 8:00–16:00</p>
+                </div>
+                <a href="tel:+74950000003" class="phone-btn">+7 (495) 000-00-03</a>
+            </article>
+
+            <article class="phone-card">
+                <div class="phone-info">
+                    <h2 class="phone-title">Психологическая служба</h2>
+                    <p class="phone-subtitle">Конфиденциальная поддержка</p>
+                </div>
+                <a href="tel:+74950000004" class="phone-btn">+7 (495) 000-00-04</a>
+            </article>
+        </main>
+    </div>
+</div>
+{% endblock %}
