@@ -1,0 +1,1467 @@
+/* ==========================================================================
+   1. ОБЩИЕ БАЗОВЫЕ СТИЛИ (GLOBAL RESET & LAYOUT)
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #ffffff;
+  color: #111111;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.container {
+  width: 100%;
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 16px 20px 40px;
+}
+
+/* Общая шапка "Информатор" */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgb(194, 194, 194);
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.headd {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 18px;
+  min-height: 70px;
+}
+
+.head-inf {
+  flex: 1;
+  text-align: center;
+}
+
+.head {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #000000;
+  letter-spacing: 0.5px;
+}
+
+.house-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.house {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  transition: transform 0.15s ease;
+}
+
+.house:active {
+  transform: scale(0.92);
+}
+
+/* ==========================================================================
+   2. ГЛАВНОЕ МЕНЮ (.page-main)
+   ========================================================================== */
+.page-main main {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 24px;
+  margin: 0;
+}
+
+.page-main section {
+  background-color: #008648;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  padding: 0 24px;
+  border-radius: 22px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.page-main section:hover {
+  background-color: #00723d;
+}
+
+.page-main section:active {
+  transform: scale(0.98);
+}
+
+.page-main section a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 800;
+  width: 100%;
+  text-align: center;
+}
+
+.page-main section h2 {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* ==========================================================================
+   3. СТОЛОВАЯ / МЕНЮ (.page-food)
+   ========================================================================== */
+.page-food .menu-head {
+  margin: 0 0 28px;
+  text-align: center;
+  font-size: 42px;
+  font-weight: 900;
+  line-height: 1;
+  color: #ef170c;
+  text-transform: uppercase;
+}
+
+.page-food .day {
+  margin-bottom: 16px;
+}
+
+.page-food .pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 64px;
+  padding: 16px 20px;
+  background: #008648;
+  color: #ffffff;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+.page-food .pill h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.page-food .open {
+  background: #144934;
+  color: #ffffff;
+  border-radius: 22px;
+  padding: 18px;
+}
+
+.page-food .menu-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.page-food .menu-heading h2 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.page-food .badge {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #2f7558;
+  border-radius: 12px;
+  padding: 4px 8px;
+}
+
+.page-food .badge-dots {
+  width: 36px;
+  height: 20px;
+  border-radius: 999px;
+  position: relative;
+  display: inline-block;
+}
+
+.page-food .dot {
+  position: absolute;
+  top: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+
+.page-food .dot.red { left: 2px; background: #ff2a1f; }
+.page-food .dot.white { right: 2px; background: #ffffff; }
+
+.page-food .badge-text {
+  font-size: 11px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.page-food .mini-menu {
+  display: grid;
+  grid-template-columns: 1fr 2px 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.page-food .menu-col h3 {
+  margin: 0 0 14px;
+  font-size: 20px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.page-food .menu-col p {
+  margin: 0 0 6px;
+  font-size: 15px;
+  line-height: 1.25;
+  color: #ffffff;
+  text-align: center;
+}
+
+.page-food .divider {
+  width: 2px;
+  min-height: 120px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 2px;
+  justify-self: center;
+}
+
+/* ==========================================================================
+   4. РАСПИСАНИЕ УРОКОВ (.page-timetable)
+   ========================================================================== */
+.page-timetable {
+  width: 100%;
+}
+
+.page-timetable .timetable-title {
+  text-align: center;
+  color: #e02424;
+  font-size: 36px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0 0 24px;
+}
+
+.page-timetable .timetable-view {
+  animation: ttFadeIn 0.2s ease-out;
+}
+
+.page-timetable .parallel-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.page-timetable .parallel-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #4b5563;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Равномерное деление строки между кнопками классов (3, 4 или 5) */
+.page-timetable .classes-row {
+  display: flex;
+  width: 100%;
+  gap: 8px;
+}
+
+.page-timetable .class-btn {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 52px;
+  border: none;
+  border-radius: 26px;
+  background-color: #008648;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
+  transition: background-color 0.15s ease, transform 0.1s ease;
+  white-space: nowrap;
+}
+
+.page-timetable .class-btn:hover {
+  background-color: #006e3b;
+}
+
+.page-timetable .class-btn:active {
+  transform: scale(0.96);
+}
+
+/* Карточка карусели расписания */
+.page-timetable .schedule-card-wrapper {
+  background: #144934;
+  border-radius: 24px;
+  padding: 20px 14px 16px;
+  color: #ffffff;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
+.page-timetable .schedule-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.page-timetable .current-class-label {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.page-timetable .back-to-classes-btn {
+  background: #008648;
+  border: none;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.page-timetable .back-to-classes-btn:hover {
+  background: #006e3b;
+}
+
+/* Слайды Swiper */
+.page-timetable .swiper {
+  width: 100%;
+  padding: 16px 0 12px;
+}
+
+.page-timetable .swiper-slide {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 16px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  opacity: 0.45;
+  transform: scale(0.92);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.page-timetable .swiper-slide-active {
+  opacity: 1;
+  transform: scale(1);
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.page-timetable .day-heading {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+
+.page-timetable .lessons-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+}
+
+.page-timetable .lesson-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  padding: 7px 10px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.page-timetable .lesson-num {
+  color: #a7f3d0;
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+.page-timetable .lesson-room {
+  color: #cbd5e1;
+  font-size: 12px;
+}
+
+.page-timetable .carousel-arrows {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 10px;
+}
+
+.page-timetable .arrow-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 32px;
+  line-height: 1;
+  cursor: pointer;
+  user-select: none;
+  opacity: 0.8;
+  transition: opacity 0.15s, transform 0.1s;
+}
+
+.page-timetable .arrow-btn:hover {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+@keyframes ttFadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ==========================================================================
+   5. МЕРОПРИЯТИЯ (.page-events)
+   ========================================================================== */
+.page-events {
+  width: 100%;
+}
+
+.page-events .events-main-title {
+  text-align: center;
+  color: #e02424;
+  font-size: 34px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0 0 24px;
+}
+
+.page-events .events-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Карточка мероприятия */
+.page-events .event-card {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 16px;
+  align-items: center;
+  background: #144934;
+  border-radius: 20px;
+  padding: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  color: #ffffff;
+}
+
+/* Реверсивная карточка: картинка справа, текст слева */
+.page-events .event-reverse {
+  grid-template-columns: 1fr 140px;
+}
+
+.page-events .event-reverse .event-thumb {
+  order: 2;
+}
+
+.page-events .event-reverse .event-body {
+  order: 1;
+}
+
+/* Блок фото */
+.page-events .event-thumb {
+  width: 100%;
+  height: 125px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-events .event-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Текстовый блок описания */
+.page-events .event-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.page-events .event-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.page-events .event-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 10px;
+  line-height: 1.2;
+}
+
+.page-events .event-badge.date {
+  background: #008648;
+  color: #ffffff;
+}
+
+.page-events .event-badge.time {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.page-events .event-title {
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin: 0;
+  color: #ffffff;
+}
+
+.page-events .event-desc {
+  font-size: 13px;
+  line-height: 1.35;
+  color: #e5e7eb;
+  margin: 0;
+}
+
+.page-events .event-place {
+  font-size: 11px;
+  color: #a7f3d0;
+  font-weight: 600;
+}
+
+/* Адаптация для мобильных экранов меньше 420px */
+@media (max-width: 420px) {
+  .page-events .event-card,
+  .page-events .event-reverse {
+    grid-template-columns: 110px 1fr;
+    gap: 12px;
+    padding: 12px;
+  }
+  .page-events .event-thumb {
+    height: 105px;
+  }
+  .page-events .event-title {
+    font-size: 15px;
+  }
+  .page-events .event-desc {
+    font-size: 12px;
+  }
+}
+
+
+/* ==========================================================================
+   УНИКАЛЬНЫЕ СТИЛИ ИЗ TIME-TABLE.HTML (С ПРЕФИКСОМ .page-timetable)
+   ========================================================================== */
+
+/* Внутренний контейнер страницы */
+.page-timetable .app-viewport {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Верхняя плашка "Информатор" */
+.page-timetable .header-bar {
+  background: #d0d0d0;
+  border-radius: 8px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.page-timetable .header-title {
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.page-timetable .home-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 6px;
+  transition: background-color 0.15s ease;
+}
+
+.page-timetable .home-btn:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.page-timetable .home-icon {
+  width: 32px;
+  height: 32px;
+  fill: none;
+  stroke: #000000;
+  stroke-width: 2.2;
+}
+
+/* Красный заголовок страницы "РАСПИСАНИЕ" */
+.page-timetable .page-title {
+  text-align: center;
+  color: #e02424;
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+/* Экран 1: Список классов */
+.page-timetable #view-classes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: ttFadeIn 0.25s ease-out;
+}
+
+.page-timetable .parallel-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.page-timetable .parallel-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #4b5563;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.page-timetable .classes-row {
+  display: flex;
+  width: 100%;
+  gap: 8px;
+}
+
+.page-timetable .class-btn {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 54px;
+  border: none;
+  border-radius: 27px;
+  background: #007542;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
+  transition: background-color 0.15s, transform 0.1s;
+  white-space: nowrap;
+}
+
+.page-timetable .class-btn:hover {
+  background-color: #005a32;
+}
+
+.page-timetable .class-btn:active {
+  transform: scale(0.96);
+}
+
+/* Экран 2: Карусель расписания */
+.page-timetable #view-carousel {
+  display: none;
+  flex-direction: column;
+  gap: 16px;
+  animation: ttFadeIn 0.25s ease-out;
+}
+
+.page-timetable .schedule-card-wrapper {
+  background: #144934;
+  border-radius: 24px;
+  padding: 20px 12px 16px;
+  color: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.page-timetable .schedule-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.page-timetable .current-class-label {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.page-timetable .status-badge {
+  font-size: 11px;
+  background: #007542;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+/* Swiper карусель */
+.page-timetable .swiper {
+  width: 100%;
+  padding: 16px 0 12px;
+}
+
+.page-timetable .swiper-slide {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 18px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  opacity: 0.4;
+  transform: scale(0.9);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.page-timetable .swiper-slide-active {
+  opacity: 1;
+  transform: scale(1);
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.page-timetable .day-heading {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.page-timetable .lessons-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+}
+
+.page-timetable .lesson-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.page-timetable .lesson-num {
+  color: #a7f3d0;
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+.page-timetable .lesson-room {
+  color: #cbd5e1;
+  font-size: 12px;
+}
+
+/* Навигационные стрелки */
+.page-timetable .carousel-arrows {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 8px;
+}
+
+.page-timetable .arrow-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 32px;
+  line-height: 1;
+  cursor: pointer;
+  user-select: none;
+  opacity: 0.8;
+  transition: opacity 0.15s, transform 0.1s;
+}
+
+.page-timetable .arrow-btn:hover {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+
+
+/* Единый стиль для контейнера и заголовков страницы мероприятий */
+.page-events {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Лента карточек */
+.events-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+/* Стилизация карточки мероприятия */
+.event-card {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 14px;
+  align-items: center;
+  background: var(--card-bg, #154834); /* Берет основной цвет темы или фирменный темно-зеленый */
+  border-radius: 18px;
+  padding: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  color: #ffffff;
+}
+
+/* Миниатюра изображения */
+.event-thumb {
+  width: 100%;
+  height: 100px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.event-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Текстовый блок карточки */
+.event-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.event-meta {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.event-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.event-badge.date {
+  background: #22c55e;
+  color: #0d3826;
+}
+
+.event-badge.time {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+.event-title {
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0;
+  color: #ffffff;
+}
+
+.event-desc {
+  font-size: 12px;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+}
+
+.event-place {
+  font-size: 11px;
+  color: #86efac;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* Адаптивность для мобильных экранов */
+@media (max-width: 480px) {
+  .event-card {
+    grid-template-columns: 100px 1fr;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .event-thumb {
+    height: 90px;
+  }
+
+  .event-title {
+    font-size: 14px;
+  }
+
+  .event-desc {
+    font-size: 11px;
+  }
+}
+
+
+/* ==========================================================================
+   Стиль страницы олимпиад (.page-olimps)
+   ========================================================================== */
+
+/* Вспомогательный класс для скрытия блоков */
+.hidden {
+  display: none !important;
+}
+
+.page-olimps {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Общий красный заголовок страницы (как в Расписании и Меню) */
+.page-olimps .page-title {
+  text-align: center;
+  color: #ef170c;
+  font-size: 36px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0 0 24px;
+}
+
+/* Экран 1: Кнопки категорий олимпиад */
+.page-olimps .page-main-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.page-olimps .main-card-link {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.page-olimps .main-card {
+  background-color: #008648;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  padding: 0 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.page-olimps .main-card:hover {
+  background-color: #00723d;
+}
+
+.page-olimps .main-card:active {
+  transform: scale(0.98);
+}
+
+.page-olimps .main-card h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 800;
+  text-align: center;
+}
+
+/* Экран 2: Шапка открытой категории */
+.page-olimps .category-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.page-olimps .btn-back {
+  background: #008648;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.page-olimps .btn-back:hover {
+  background-color: #006e3b;
+}
+
+.page-olimps .btn-back:active {
+  transform: scale(0.96);
+}
+
+.page-olimps .category-title {
+  margin: 0;
+  color: #144934;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+/* Лента и группа карточек */
+.page-olimps .olimps-feed,
+.page-olimps .cat-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Карточка олимпиады */
+.page-olimps .olimp-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #144934;
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  color: #ffffff;
+}
+
+.page-olimps .olimp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.page-olimps .olimp-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.page-olimps .olimp-subject {
+  font-size: 11px;
+  color: #a7f3d0;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.page-olimps .olimp-title {
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin: 0;
+  color: #ffffff;
+}
+
+/* Бейджи статуса */
+.page-olimps .status-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.page-olimps .status-badge.reg { background: #3b82f6; color: #ffffff; }
+.page-olimps .status-badge.active { background: #22c55e; color: #0d3826; }
+.page-olimps .status-badge.stage { background: #eab308; color: #1e1b4b; }
+
+.page-olimps .olimp-desc {
+  font-size: 12px;
+  line-height: 1.35;
+  color: #e5e7eb;
+  margin: 0;
+}
+
+/* Таймлайн этапов */
+.page-olimps .calendar-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.page-olimps .timeline-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #86efac;
+  text-transform: uppercase;
+}
+
+.page-olimps .timeline-steps {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 4px;
+}
+
+.page-olimps .timeline-steps::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 10px;
+  right: 10px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.2);
+  z-index: 1;
+}
+
+.page-olimps .t-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  flex: 1;
+}
+
+.page-olimps .t-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: 2px solid #144934;
+  margin-bottom: 4px;
+}
+
+.page-olimps .t-step.completed .t-dot { background: #22c55e; }
+.page-olimps .t-step.current .t-dot { background: #eab308; box-shadow: 0 0 8px #eab308; }
+.page-olimps .t-step.upcoming .t-dot { background: rgba(255, 255, 255, 0.4); }
+
+.page-olimps .t-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.page-olimps .t-date {
+  font-size: 9px;
+  color: #9ca3af;
+}
+
+.page-olimps .t-step.current .t-label { color: #ffffff; font-weight: 800; }
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 480px) {
+  .page-olimps .olimp-card {
+    padding: 12px;
+  }
+  .page-olimps .olimp-title {
+    font-size: 15px;
+  }
+  .page-olimps .t-label {
+    font-size: 9px;
+  }
+}
+/* ==========================================================================
+   6. АКЦИИ И ПРОЕКТЫ (.page-projects)
+   ========================================================================== */
+.page-projects {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-projects .projects-main-title {
+  text-align: center;
+  color: #e02424;
+  font-size: 34px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0 0 24px;
+}
+
+.page-projects .projects-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Карточка акции/проекта */
+.page-projects .project-card {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 16px;
+  background: #144934;
+  border-radius: 20px;
+  padding: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  color: #ffffff;
+}
+
+/* Блок фото */
+.page-projects .project-thumb {
+  width: 100%;
+  height: 100%;
+  min-height: 110px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.page-projects .project-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Описание карточки */
+.page-projects .project-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.page-projects .project-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Бейджи состояния */
+.page-projects .project-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.page-projects .project-badge.status-active {
+  background: #22c55e;
+  color: #0d3826;
+}
+
+.page-projects .project-badge.status-urgent {
+  background: #eab308;
+  color: #1e1b4b;
+}
+
+.page-projects .project-category {
+  font-size: 11px;
+  color: #a7f3d0;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.page-projects .project-title {
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin: 0;
+  color: #ffffff;
+}
+
+.page-projects .project-desc {
+  font-size: 12px;
+  line-height: 1.35;
+  color: #e5e7eb;
+  margin: 0;
+}
+
+/* Подвал карточки с кнопкой и сроками */
+.page-projects .project-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 4px;
+  gap: 10px;
+}
+
+.page-projects .project-deadline {
+  font-size: 11px;
+  color: #86efac;
+  font-weight: 600;
+}
+
+.page-projects .project-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #008648;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 12px;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+  white-space: nowrap;
+}
+
+.page-projects .project-action-btn:hover {
+  background-color: #006e3b;
+}
+
+.page-projects .project-action-btn:active {
+  transform: scale(0.96);
+}
+
+.page-projects .no-projects {
+  text-align: center;
+  color: #6b7280;
+  padding: 32px 0;
+  font-weight: 600;
+}
+
+/* Адаптивность для мобильных экранов */
+@media (max-width: 480px) {
+  .page-projects .project-card {
+    grid-template-columns: 100px 1fr;
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .page-projects .project-title {
+    font-size: 15px;
+  }
+
+  .page-projects .project-desc {
+    font-size: 11px;
+  }
+
+  .page-projects .project-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .page-projects .project-action-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+/* ==========================================================================
+   ДОПОЛНЕНИЯ ДЛЯ ТАБЛИЧНОГО РАСПИСАНИЯ (БЕЗ JS-СЛАЙДЕРА)
+   ========================================================================== */
+
+/* Выделение активной кнопки (вкладки) класса */
+.page-timetable .class-btn.active {
+  background-color: #e02424; /* Фирменный красный из твоих заголовков */
+  box-shadow: inset 0 3px 6px rgba(0,0,0,0.2);
+  transform: scale(0.96);
+}
+
+/* Логика переключения таблиц */
+.schedule-table-wrapper {
+  display: none;
+}
+.schedule-table-wrapper.active-schedule {
+  display: block;
+  animation: ttFadeIn 0.3s ease-out; /* Используем твою существующую анимацию */
+}
+
+/* Стили самой таблицы */
+.table-scroll {
+  overflow-x: auto;
+  margin-top: 16px;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Тень в стиле твоих карточек */
+}
+
+.timetable {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+  font-family: Inter, sans-serif; /* Твой основной шрифт */
+  font-size: 14px;
+  background-color: #ffffff;
+}
+
+.timetable th, .timetable td {
+  border: 1px solid #d1d5db;
+  padding: 12px;
+  text-align: center;
+  vertical-align: middle;
+  color: #111111;
+}
+
+.timetable th {
+  background-color: #f3f4f6;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+
+.timetable .time-cell {
+  background-color: #f9fafb;
+  font-weight: 800;
+  width: 100px;
+  color: #374151;
+}
+
+.timetable .meal-cell {
+  font-weight: 800;
+  letter-spacing: 2px;
+  font-style: italic;
+  font-size: 16px;
+}
+
+/* Подсветка текущего дня */
+.current-day-highlight {
+  border: 3px solid #ef170c !important;
+  box-shadow: inset 0 0 12px rgba(239, 23, 12, 0.15);
+}
+
+/* --- ЦВЕТА ПРЕДМЕТОВ (как на картинке) --- */
+.bg-gray { background-color: #d1bfae; }
+.bg-red { background-color: #e56b6f; }
+.bg-yellow { background-color: #f4d35e; }
+.bg-light-blue { background-color: #a0c4ff; }
+.bg-teal { background-color: #457b9d; color: white;}
+.bg-purple { background-color: #b5838d; }
+.bg-pink { background-color: #ffb5a7; }
+.bg-orange { background-color: #fca311; }
+.bg-green { background-color: #8cb369; }
+.bg-light-pink { background-color: #f8ad9d; }
+.bg-blue { background-color: #4a90e2; color: white; }
+.bg-cyan { background-color: #48cae4; }
+.bg-light-yellow { background-color: #fefae0; }

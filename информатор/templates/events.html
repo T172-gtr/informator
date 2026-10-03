@@ -1,0 +1,70 @@
+
+
+
+{% extends "header.html" %}
+{% block title %}
+  Мероприятия
+{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <div class="page-events">
+        <h1 class="events-main-title">МЕРОПРИЯТИЯ</h1>
+
+        <main class="events-feed">
+            <!-- Мероприятие 1 -->
+            <article class="event-card">
+              <div class="event-thumb">
+                <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=400&q=80" alt="Школьный лекторий">
+              </div>
+              <div class="event-body">
+                <div class="event-meta">
+                  <span class="event-badge date">15 сентября</span>
+                  <span class="event-badge time">14:30</span>
+                </div>
+                <h3 class="event-title">Открытый лекторий: Наука будущего</h3>
+                <p class="event-desc">Встреча с молодыми учеными, интерактивные эксперименты по физике и робототехнике.</p>
+                <span class="event-place">📍 Актовый зал</span>
+              </div>
+            </article>
+
+            <!-- Мероприятие 2 -->
+            <article class="event-card">
+              <div class="event-thumb">
+                <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=400&q=80" alt="Спортивный кросс">
+              </div>
+              <div class="event-body">
+                <div class="event-meta">
+                  <span class="event-badge date">22 сентября</span>
+                  <span class="event-badge time">11:00</span>
+                </div>
+                <h3 class="event-title">Осенний легкоатлетический кросс</h3>
+                <p class="event-desc">Традиционный забег по параллелям 5–11 классов. Поддержка болельщиков приветствуется!</p>
+                <span class="event-place">📍 Школьный стадион</span>
+              </div>
+            </article>
+
+            <!-- Мероприятие 3 -->
+            <article class="event-card">
+              <div class="event-thumb">
+                <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=400&q=80" alt="Концерт">
+              </div>
+              <div class="event-body">
+                <div class="event-meta">
+                  <span class="event-badge date">5 октября</span>
+                  <span class="event-badge time">15:00</span>
+                </div>
+                <h3 class="event-title">Праздничный концерт ко Дню учителя</h3>
+                <p class="event-desc">Творческие номера от классов, школьный хор и театральная постановка школьного совета.</p>
+                <span class="event-place">📍 Актовый зал</span>
+              </div>
+            </article>
+        </main>
+    </div>
+</div>
+{% endblock %}
